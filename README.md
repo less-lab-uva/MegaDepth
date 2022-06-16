@@ -19,12 +19,16 @@ This is a code of the algorithm described in "MegaDepth: Learning Single-View De
 * The code was written in Pytorch 0.2 and Python 2.7, but it should be easy to adapt it to Python 3 and latest Pytorch version if needed.
 * You might need skimage, h5py libraries installed for python before running the code.
 
-#### Single-view depth prediction on any Internet photo:
-* Download pretrained models from: http://www.cs.cornell.edu/projects/megadepth/dataset/models/best_generalization_net_G.pth and put it in "checkpoints/test_local/best_generalization_net_G.pth
-* In python file "models/HG_model.py", in init function, change to "model_parameters = self.load_network(model, 'G', 'best_generalization')"
-* run demo code 
+#### Depth prediction (Inference):
+<!-- * Download pretrained models from: http://www.cs.cornell.edu/projects/megadepth/dataset/models/best_generalization_net_G.pth and put it in "checkpoints/test_local/best_generalization_net_G.pth -->
+* Download pretrained models by executing
 ```bash
-    python demo.py
+    python download_model.py
+```
+<!-- * In python file "models/HG_model.py", in init function, change to "model_parameters = self.load_network(model, 'G', 'best_generalization')" -->
+* run inference code 
+```bash
+    python inference.py --input_dir ./inputs/ --output_dir ./outputs/
 ```
 You should see an inverse depth prediction saved as demo.png from an original photo demo.jpg. If you want to use RGB maps for visualization, like the figures in our paper, you have to install/run semantic segmentation from https://github.com/kazuto1011/pspnet-pytorch trained on ADE20K to mask out sky, because inconsistent depth prediction of unmasked sky will not make RGB visualization resonable.
 
