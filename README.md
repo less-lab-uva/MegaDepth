@@ -30,7 +30,7 @@ This is a code of the algorithm described in "MegaDepth: Learning Single-View De
 ```bash
     python inference.py --input_dir ./inputs/ --output_dir ./outputs/
 ```
-You should see an inverse depth prediction saved as demo.png from an original photo demo.jpg. If you want to use RGB maps for visualization, like the figures in our paper, you have to install/run semantic segmentation from https://github.com/kazuto1011/pspnet-pytorch trained on ADE20K to mask out sky, because inconsistent depth prediction of unmasked sky will not make RGB visualization resonable.
+<!-- You should see an inverse depth prediction saved as demo.png from an original photo demo.jpg. If you want to use RGB maps for visualization, like the figures in our paper, you have to install/run semantic segmentation from https://github.com/kazuto1011/pspnet-pytorch trained on ADE20K to mask out sky, because inconsistent depth prediction of unmasked sky will not make RGB visualization resonable. -->
 
 
 #### Evaluation on the MegaDepth test splits:
